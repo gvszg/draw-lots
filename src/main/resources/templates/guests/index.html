@@ -50,16 +50,16 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-6">
-                                <form role="form" action="/guests" method="post">
+                                <form role="form" th:action="@{/guests}" method="post">
                                     <div class="form-group">
                                         <label>您的大名</label>
-                                        <input type="text" class="form-control" placeholder="您的大名"/>
+                                        <input type="text" th:value="${guest.username}" name="guest[username]" required="required" class="form-control" placeholder="您的大名"/>
 <!--                                        <p class="help-block">這邊可以放些提示的訊息(驗證錯誤等).</p>-->
                                     </div>
 
                                     <div class="form-group">
                                         <label>您的年齡</label>
-                                        <input type="number" min="0" class="form-control" placeholder="您的年齡"/>
+                                        <input type="number" th:value="${guest.age}" name="guest[age]" min="0" required="required" class="form-control" placeholder="您的年齡"/>
                                     </div>
 
                                     <button type="submit" class="btn btn-primary">確認送出</button>
