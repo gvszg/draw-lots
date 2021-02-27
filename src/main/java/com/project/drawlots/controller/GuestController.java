@@ -47,6 +47,11 @@ public class GuestController {
             log.error(e.getMessage());
         }
 
+        return "redirect:/guests/thanks";
+    }
+
+    @GetMapping(value = {"thanks"})
+    public String thanks() {
         return "guests/thanks";
     }
 }
